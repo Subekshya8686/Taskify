@@ -38,13 +38,11 @@ class _LoginScreenState extends State<LoginScreen> {
         String? userId = _authViewModel.loggedInUser!.id;
 
         if (userId != null) {
-          // Update the Firestore document with the user_id field
           await FirebaseFirestore.instance
-              .collection('users') // Replace 'users' with your collection name
+              .collection('users')
               .doc(userId)
               .set({'user_id': userId}, SetOptions(merge: true));
         }
-
 
         Navigator.of(context).pushReplacementNamed('/home');
       }).catchError((e) {

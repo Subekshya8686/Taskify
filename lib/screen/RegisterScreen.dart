@@ -292,13 +292,6 @@ class ValidateSignup {
     return null;
   }
 
-  static String? phone(String? value) {
-    if (value == null || value.isEmpty) {
-      return "Phone number is required";
-    }
-    return null;
-  }
-
   static String? username(String? value) {
     if (value == null || value.isEmpty) {
       return "Username is required";
